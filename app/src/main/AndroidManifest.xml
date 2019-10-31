@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.rahulrane.attendancesystemhotspotbased">
+
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission
+        android:name="android.permission.WRITE_SETTINGS"
+        tools:ignore="ProtectedPermissions" />
+    <uses-permission android:name="android.permission.ACCESS_NOTIFICATION_POLICY" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".StudentMainActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".TeacherMainActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".LoginActivity"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".SignupActivity"
+            android:label="@string/title_activity_signup"
+            android:parentActivityName=".LoginActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.rahulrane.attendancesystemhotspotbased.LoginActivity" />
+        </activity>
+        <activity
+            android:name=".LectureAddActivity"
+            android:label="Add Lecture"
+            android:parentActivityName=".TeacherMainActivity" />
+        <activity
+            android:name=".StudentUserDetailsActivity"
+            android:label="Your Details"
+            android:parentActivityName=".StudentMainActivity"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".TeacherUserDetailsActivity"
+            android:label="Your Details"
+            android:parentActivityName=".TeacherMainActivity"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".StudentLectureDetailsActivity"
+            android:parentActivityName=".StudentMainActivity"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".TeacherLectureDetailsActivity"
+            android:parentActivityName=".TeacherMainActivity"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".ChangePasswordActivity"
+            android:label="Change Password"
+            android:parentActivityName=".ChangePasswordActivity" />
+        <activity
+            android:name=".StudentAttendanceRegisterActivity"
+            android:parentActivityName=".StudentMainActivity" />
+
+        <service
+            android:name=".BackgroundService"
+            android:enabled="true"
+            android:exported="true" />
+    </application>
+
+</manifest>
